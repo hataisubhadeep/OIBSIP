@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form2</title>
+</head>
+<body>
+<div style="text-align: right;">
+  <a  href="form2.html" >View Full Form</a>
+</div>
+
+    <div >
+    <form>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" placeholder="First name"><br> <br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname" placeholder="Last name"><br><br>
+        <label for="lname">Email:</label>
+        <input type="email" placeholder="It should contain @"><br><br>
+        <label for="mobile">Mobile Number:</label>
+  <input type="text" id="mobile" name="mobile" pattern="\d{10}" minlength="10" maxlength="10" required><br><br>
+  
+        <label>
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="male" required> Male
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female" required> Female
+          </label><br><br>
+          <label for="dob">Date of Birth:</label>
+  <input type="date" id="dob" name="dob" min="2012-12-12" max="2024-08-13" required><br><br>
+  <label for="address">Address:</label>
+  <textarea id="address" name="address" maxlength="500" style="resize: vertical;" required></textarea><br><br>
+  <label for="city">Select City:</label>
+  <select id="city" name="city"  required>
+    <option value="" disabled selected>Select City</option>
+    <option value="mumbai">Mumbai</option>
+    <option value="delhi">Delhi</option>
+    <option value="bangalore">Bangalore</option>
+    <option value="chennai">Chennai</option>
+    <option value="kolkata">Kolkata</option>
+    <option value="hyderabad">Hyderabad</option>
+    <option value="pune">Pune</option>
+    <option value="ahmedabad">Ahmedabad</option>
+    <option value="jaipur">Jaipur</option>
+    <option value="lucknow">Lucknow</option>
+  </select><br><br>
+  <label for="pin">PIN Number:</label>
+  <input type="text" id="pin" name="pin"  maxlength="6" required><br><br>
+  <label for="state">State:</label>
+  <input id="state"  required><br><br>
+  <label for="qualification">Qualification:</label>
+  <input id="qualification"  required><br><br>
+
+  
+    <label style="display: flex;">Specalization:</label>   
+      <input type="checkbox" name="streams" value="science">  Computer Science   
+    <br>  
+      <input type="checkbox" name="streams" value="Information Technolgy"> Information Technolgy   
+    <br>  
+      <input type="checkbox" name="streams" value="Computer Architecture"> Computer Architecture
+    <br> 
+      <input type="checkbox" name="streams" value="Tele Communication"> Tele Communication<br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" minlength="8" required>
+      <br><br>
+  
+      <input type="submit">
+ 
+    </form>
+</div>
+</body>
+</html>
