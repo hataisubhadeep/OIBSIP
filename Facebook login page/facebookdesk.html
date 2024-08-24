@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceBook</title>
+    <style>
+        * {
+            margin: 0;
+            font-family: Arial;
+            border: border-box;
+        }
+
+        .logo {
+            margin-left: 200px;
+            font-size: 1.5rem;
+
+        }
+
+        .logo h2 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .nav-bar {
+            height: 65px;
+            background: #3B5998;
+            color: white;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .login {
+            display: flex;
+            justify-content: flex-end;
+            position: absolute;
+            right: 10%;
+        }
+
+        .password {
+            margin-left: 50px;
+        }
+
+        .password h6 {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        .login1 {
+            margin-left: 20px;
+
+        }
+
+        .login1 button {
+            width: 59px;
+            height: 20px;
+            margin-top: 19px;
+            cursor: pointer;
+            background-color: #3B5998;
+            color: white;
+        }
+
+        .leftside {
+            width: 25%;
+            margin-left: 280px;
+            margin-top: 35px;
+        }
+
+        .leftside h3 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+        }
+
+        .leftside img {
+            width: 700px;
+            margin-left: -90px;
+            margin-top: 20px;
+        }
+
+        .downform1 {
+            position: absolute;
+            right: 11%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: small;
+            margin-top: -350px;
+        }
+
+        .downform1 h1 {
+            font-size: 2.5rem;
+        }
+
+        .downform1 p {
+            font-size: 1.1rem;
+        }
+
+        .fn {
+            margin-right: 10px;
+            top: 20px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            padding: 5px;
+        }
+
+        .ep {
+            margin-right: 10px;
+            top: 20px;
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 95%;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .uff p {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        #dt {
+            margin-bottom: 10px;
+            width: 40%;
+            font-size: 1.1rem;
+            margin-top: 15px;
+        }
+
+        .ml {
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        label {
+            font-size: 20px;
+            color: #000;
+            margin-right: 15px;
+            margin-left: 10px;
+
+        }
+
+        #bt {
+            margin-top: 20px;
+            height: 40px;
+            width: 200px;
+            background-color: rgb(118, 201, 46);
+            color: #ffffff;
+            border-radius: 5px;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+        
+        }
+
+        .pic {
+            position: absolute;
+            size: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="logo">
+            <h2>facebook</h2>
+        </div>
+        <div class="login">
+            <div class="email">
+                <p>Email or phone</p>
+                <input type="email" placeholder="">
+            </div>
+            <div class="password">
+                <p>Password</p>
+                <input type="password">
+                <h6>Forgetten Password ?</h6>
+            </div>
+            <div class="login1">
+                <button>Log In</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="downfrom">
+        <div class="leftside">
+            <span>
+                <h3>Facebook helps you connect <br>and share with the people <br> in your life.</h3>
+            </span>
+            <img src="facebookdesk.jpg" alt="image">
+        </div>
+        <div class="rightside">
+            <div class="downform1">
+                <h1> Create an account </h1>
+                <br>
+                <p> It's free and always will be. </p>
+                <br>
+                <div class="uff">
+                    <input type="text" class="fn" placeholder="First Name"> </input>
+                    <input type="text" class="fn" placeholder="Last Name"> </input>
+                    <br>
+                    <input type="text" class="ep" placeholder="Mobile number or email"> </input>
+                    <br>
+                    <input type="password" class="ep" placeholder="New Password"> </input>
+                    <br>
+                    <p> Birthday </p>
+                    <input type="date" id="dt"></input>
+                    <br>
+                    <input type="radio" class="ml" name="gender">
+                    <label for="ml">Male</label>
+
+                    <input type="radio" class="ml" name="gender">
+                    <label for="fl">Female</label>
+                </div><br>
+                <div>
+                    <p>Lorem ipsum dolor, sit amet consectetur <br>adipisicing elit. Rem, accusamus hic cupiditate
+                        <br>molestiae voluptatum facilis.
+                    </p><br>
+                </div>
+                <button id="bt"> Create an account</button><br>
+                <a href="" style="font-size: 20px;">Create a page</a>
+            </div>
+        </div>
+
+</body>
+
+</html>
