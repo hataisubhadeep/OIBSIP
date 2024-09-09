@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Mobile</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        font-family: Arial;
+        border: border-box;
+    }
+
+    .main {
+        height: 680px;
+        width: 400px;
+        margin-top: 7px;
+
+    }
+
+    .main img {
+        width: 100%;
+    }
+
+    span {
+        color: blue;
+    }
+
+    .login {
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    .login input {
+        width: 75%;
+        margin-top: 20px;
+        font-size: 1.2rem;
+        padding: 10px;
+        border: none;
+        border-bottom: 2px solid black;
+    }
+
+    .login-button {
+        margin-top: 30px;
+    }
+
+    button {
+        width: 80%;
+        height: 45px;
+        border-radius: 5px;
+        border: none;
+        background-color: #263893;
+        color: white;
+        cursor: pointer;
+    }
+
+    .main h5 {
+        margin-top: 20px;
+        color: #263893;
+        font-size: 0.8rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .divide {
+        display: flex;
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .line {
+        width: 100%;
+        height: 2px;
+        background-color: gray;
+        margin: 10px 0;
+    }
+
+    .or {
+        display: inline-block;
+        margin: 0 10px;
+        font-weight: bold;
+    }
+
+    .new-account {
+        margin-top: 20px;
+
+    }
+
+    #account {
+        background-color: rgb(26, 113, 32);
+        text-align: center;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <center>
+        <div class="main">
+            <img src="facebook.png" alt="front-page">
+            <p>English - हिन्दी - <span>More..... </span></p>
+            <div class="login">
+                <input type="text" placeholder="Phone number or email address">
+                <input type="password" placeholder="Password">
+                <div class="login-button">
+                    <button>LOG IN</button>
+                </div>
+            </div>
+            <h5>Forgotten password ?</h5>
+            <div class="divide">
+                <div class="line"></div>
+                <div class="or">OR</div>
+                <div class="line"></div>
+            </div>
+            <div class="new-account">
+                <button id="account">CREATE NEW FACEBOOK ACCOUNT</button>
+            </div>
+        </div>
+    </center>
+
+</body>
+
+</html>
