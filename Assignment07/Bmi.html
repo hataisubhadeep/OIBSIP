@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            height: auto;
+            width: 400px;
+            background-color: gray;
+            border: 2px solid rgba(0, 0, 0, 0.393);
+            border-radius: 10px;
+            position: relative;
+            padding: 20px;
+        }
+
+        .heading {
+            height: 20px;
+            text-align: center;
+            margin-top: 2px;
+            color: white;
+        }
+
+        .input {
+            padding: 0px;
+            color: white;
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 40px;
+        }
+
+        .weight input {
+            margin-top: 5px;
+            padding: 5px;
+        }
+
+        .calc {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .calc input {
+            padding: 6px 25px;
+            font-size: 1.3rem;
+            background-color: rgb(0, 255, 0);
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .output {
+            display: flex;
+        }
+
+        .output p {
+            margin-top: 28px;
+            color: white;
+            margin-left: 20px;
+        }
+
+        #output2 {
+            height: 10px;
+            width: 90%;
+            margin-top: 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            margin-left: 30px;
+            margin-right: 20px;
+            color: white;
+            align-items: center;
+            display: flex;
+            padding: 10px;
+
+        }
+
+        .meter img {
+            width: 400px;
+            margin-top: 30px;
+            align-items: center;
+            display: flex;
+            margin-bottom: 20px;
+
+        }
+
+        .point {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .point img {
+            width: 50px;
+            position: relative;
+            margin-top: -220px;
+            transform-origin: bottom center;
+            transition: transform 0.5s ease;
+        }
+
+        .reset input {
+            padding: 5px 20px;
+            margin-left: 38%;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(255, 0, 0);
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="box">
+            <div class="heading">
+                <h1>BMI CALCULATOR</h1>
+            </div>
+            <div class="input">
+                <div class="weight">
+                    <p>Enter Weigth : </p>
+                    <input type="number" placeholder="In Kilograms " id="weight">
+                </div>
+                <div class="weight">
+                    <p>Enter Height : </p>
+                    <input type="number" placeholder="In Meters " id="height">
+                </div>
+            </div>
+            <div class="calc">
+                <input type="button" value="Calculate" onclick="calculate()">
+            </div>
+
+            <div class="output">
+                <p>BMI</p>
+                <div id="output2"></div>
+            </div>
+            <div class="meter">
+                <img src="meter.png" alt="">
+                <div class="point">
+                    <img src="png-transparent-needle-meter-gauge-thumbnail.png" alt="" id="pointer">
+                </div>
+            </div>
+            <div class="reset">
+                <input type="button" value="Reset" onclick="Erase()">
+            </div>
+        </div>
+    </main>
+    <script>
+        let display = document.getElementById('output2')
+
+        function calculate() {
+            let weight = document.getElementById('weight').value
+            let height = document.getElementById('height').value
+
+            if (weight > 0 && height > 0) {
+                let bmi = weight / (height * height)
+                display.innerHTML = bmi.toFixed(2)
+            }
+            else {
+                display.innerHTML = 'Please Enter valid data'
+            }
+
+            let bmi = weight / (height * height)
+            let pointer = document.getElementById('pointer')
+            if (bmi < 18.5) {
+                pointer.style.transform = 'rotate(-70deg)'
+            }
+            else if (bmi > 18.5 && bmi < 24.9) {
+                pointer.style.transform = 'rotate(-35deg)'
+            }
+            else if (bmi > 25.0 && bmi < 29.9) {
+                pointer.style.transform = 'initial'
+            }
+            else if (bmi > 30.0 && bmi < 34.9) {
+                pointer.style.transform = 'rotate(30deg)'
+            } else if (bmi > 35.0) {
+                pointer.style.transform = 'rotate(70deg)'
+            }
+
+        }
+
+        function Erase() {
+            display.innerHTML = ''
+            document.getElementById('weight').value = ''
+            document.getElementById('height').value = ''
+            document.getElementById('pointer').style.transform = 'initial'
+
+        }
+    </script>
+</body>
+
+</html>
