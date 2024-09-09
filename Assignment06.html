@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcultor</title>
+   <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    
+    body {
+        /* background-color: aqua; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .box {
+        height: auto;
+        width: 350px;
+        background-color: #2c2c2c;
+        border: 2px solid rgba(0, 0, 0, 0.393);
+        border-radius: 10px;
+        position: relative;
+    }
+    
+    .close {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+    
+    .circle {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    #circle1 {
+        background-color: red;
+    }
+    
+    #circle2 {
+        background-color: orange;
+    }
+    
+    #circle3 {
+        background-color: green;
+    }
+    
+    .output {
+        height: 15vh;
+        width: 100%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        box-sizing: border-box;
+        font-size: 4rem;
+        
+    }
+    
+    .input {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.9px;
+        
+    }
+    
+    .input input {
+        width: 100%;
+        height: 70px;
+        font-size: 24px;
+        border: none;
+        background-color: #606060;
+        color: white;
+    }
+    
+    
+    .zero {
+        grid-column: span 2;
+        border-bottom-left-radius: 9px;
+    }
+    
+    .equal {
+        border-bottom-right-radius: 9px;
+    
+    }
+    .yellow{
+        background-color: #cb7e23;
+    }
+   </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="close">
+            <div class="circle" id="circle1"></div>
+            <div class="circle" id="circle2"></div>
+            <div class="circle" id="circle3"></div>
+        </div>
+        <div class="output" id="display">
+
+        </div>
+        <div class="input">
+            <input type="button" value="AC"  id="clear" onclick="allclear()" style="background-color: #414141;">
+            <input type="button" value="+/-"   style="background-color: #414141;" onclick="signchange()">
+            <input type="button" value="%"  onclick="appendTodisplay('%')"  style="background-color: #414141;">
+            <input type="button" value="÷" onclick="appendTodisplay('/')" style="background-color: #cb7e23;">
+           
+
+            <input type="button" value="7" onclick="appendTodisplay('7')">
+            <input type="button" value="8" onclick="appendTodisplay('8')">
+            <input type="button" value="9" onclick="appendTodisplay('9')">
+            <input type="button" value="x" onclick="appendTodisplay('*')" style="background-color: #cb7e23;">
+
+            <input type="button" value="4" onclick="appendTodisplay('4')">
+            <input type="button" value="5" onclick="appendTodisplay('5')">
+            <input type="button" value="6" onclick="appendTodisplay('6')">
+            <input type="button" value="-" onclick="appendTodisplay('-')" style="background-color: #cb7e23;">
+
+            <input type="button" value="1" onclick="appendTodisplay('1')">
+            <input type="button" value="2" onclick="appendTodisplay('2')">
+            <input type="button" value="3" onclick="appendTodisplay('3')">
+            <input type="button" value="+" onclick="appendTodisplay('+')" style="background-color: #cb7e23;">
+
+            <input type="button" value="0" class="zero" onclick="appendTodisplay('0')">
+            <input type="button" value="." onclick="appendTodisplay('.')">
+            <input type="button" value="=" class="equal" onclick="calc()" style="background-color: #cb7e23;">
+        </div>
+    </div>
+
+
+    <script>
+        let display = document.getElementById('display')
+
+// console.log(display.innerHTML.length)
+
+function appendTodisplay(value) {
+    display.innerHTML += value
+
+    let displayText = display.innerHTML.trim()
+
+    if (displayText.length > 13) {
+        display.style.fontSize = '2rem';
+       
+    }
+    else if (displayText.length > 10) {
+        display.style.fontSize = '3rem';
+    } else {
+        display.style.fontSize = '4rem';
+    }
+}
+
+function calc() {
+    try {
+        display.innerHTML = eval(display.innerHTML)
+    } catch (error) {
+        display.innerHTML = 'Error'
+    }
+}
+
+function allclear() {
+    display.innerHTML = ""
+    display.style.fontSize = '4rem';
+}
+
+
+function signchange(){
+
+    let number  = parseFloat(display.innerHTML)
+    if(number>0){
+       display.innerHTML = -number
+    }else if(number<0){
+       display.innerHTML = Math.abs(number)
+    }
+}
+
+    </script>
+</body>
+</html>
