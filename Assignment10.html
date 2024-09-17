@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Division operation inside try,catch and finally block</title>
+</head>
+<body>
+    <script>
+        function division(dividend,divisor){
+            try{
+                let ans=dividend/divisor;
+                console.log(ans);
+            }catch(e){
+                console.log(e);
+            }finally{
+                console.log("i am in finally block and division operation get performed");
+            }
+        }
+        
+        division(10,0);
+        division(10,2);
+    </script>
+</body>
+</html>
