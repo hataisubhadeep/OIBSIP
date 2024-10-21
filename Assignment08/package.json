@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "express": "^4.21.1",
+    "hbs": "^4.2.0",
+    "nodemon": "^3.1.7"
+  },
+  "scripts": {
+  "start": "node app.js",
+  "dev": "nodemon app.js - e js , hbs"
+}
+}
+
+
